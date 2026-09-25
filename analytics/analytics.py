@@ -4,7 +4,6 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
@@ -19,7 +18,7 @@ import joblib
 
 os.makedirs("analytics", exist_ok=True)
 
-print("=== TASK 1 ===")
+print("task 1")
 df = sns.load_dataset('titanic')
 print(df.info()); print(df.describe()); print(df.shape)
 df.to_csv("analytics/titanic.csv", index=False)
