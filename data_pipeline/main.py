@@ -5,7 +5,6 @@ import pandas as pd
 import sqlite3
 import re
 
-os.makedirs("data_pipeline", exist_ok=True)
 
 print("scraping books.toscrape.com...")
 
