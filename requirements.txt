@@ -4,6 +4,9 @@ pandas
 lxml
 seaborn
 imbalanced-learn
+scikit-learn
+matplotlib
+joblib
 chromadb==0.4.24
 sentence-transformers
 langgraph
