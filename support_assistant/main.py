@@ -35,7 +35,7 @@ Few-shot: Q: fee below 149? Context: free over 149 else 25. JSON: {"answer":"25 
 print("Loading model all-MiniLM-L6-v2")
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
-client = chromadb.EphemeralClient()
+client = chromadb.PersistentClient(path="support_assistant/chroma_db")
 collection = client.get_or_create_collection(name="zepto_policies")
 
 ids = list(DOCS.keys())
@@ -47,7 +47,7 @@ try:
 except:
     pass
 collection.add(ids=ids, documents=texts, embeddings=embs)
-print(f"Indexed {collection.count()} docs - FIXED")
+print(f"Indexed {collection.count()} docs")
 
 class GraphState(TypedDict):
     query: str
