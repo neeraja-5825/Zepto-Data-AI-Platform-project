@@ -37,8 +37,7 @@ model = SentenceTransformer('all-MiniLM-L6-v2')
 
 # FIX: Use Ephemeral Client for Colab Python 3.13 - avoids PersistentClient bug
 # For local grading you can switch back to PersistentClient(path="...") - same API
-client = chromadb.EphemeralClient()
-collection = client.get_or_create_collection(name="zepto_policies")
+
 
 ids = list(DOCS.keys())
 texts = list(DOCS.values())
